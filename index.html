@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <header>
+      <figure class="logo">
+        <img
+          src="/images/logo.svg"
+          alt="Splitter"
+          role="heading"
+          aria-level="1"
+        />
+      </figure>
+    </header>
+    <main>
+      <form action="">
+        <div class="form-group">
+          <label for="bill">Bill</label>
+          <input type="number" name="bill" id="bill" />
+        </div>
+        <div class="form-group">
+          <label>Select Tip %</label>
+          <input type="radio" name="tip" id="tip--1" />
+          <label for="tip--1">5%</label>
+          <input type="radio" name="tip" id="tip--2" />
+          <label for="tip--2">10%</label>
+          <input type="radio" name="tip" id="tip--3" />
+          <label for="tip--3">15%</label>
+          <input type="radio" name="tip" id="tip--4" />
+          <label for="tip--4">25%</label>
+          <input type="radio" name="tip" id="tip--5" />
+          <label for="tip--5">50%</label>
+          <input type="radio" name="tip" id="tip--6" />
+          <label for="tip--6">Custom</label>
+        </div>
+        <div class="form-group">
+          <label for="people">Number of People</label>
+          <input type="number" name="people" id="people" />
+        </div>
+      </form>
+      <div class="results">
+        <div class="result">
+          <h2>Tip Amount</h2>
+          <p class="sub">/ person</p>
+          <p class="value">$4.27</p>
+        </div>
+        <div class="result">
+          <h2>Total</h2>
+          <p class="sub">/ person</p>
+          <p class="value">$32.79</p>
+        </div>
+        <button type="button">Reset</button>
+      </div>
+    </main>
+  </body>
+</html>
