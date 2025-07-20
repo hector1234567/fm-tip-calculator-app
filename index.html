@@ -12,7 +12,8 @@
       href="./images/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | Tip calculator app</title>
+    <title>Tip calculator app | Hector BG</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
@@ -29,26 +30,26 @@
       <form action="">
         <div class="form-group">
           <label for="bill">Bill</label>
-          <input type="number" name="bill" id="bill" />
+          <input type="text" name="bill" id="bill" />
         </div>
-        <div class="form-group">
+        <div class="radio-group">
           <label>Select Tip %</label>
-          <input type="radio" name="tip" id="tip--1" />
-          <label for="tip--1">5%</label>
-          <input type="radio" name="tip" id="tip--2" />
-          <label for="tip--2">10%</label>
-          <input type="radio" name="tip" id="tip--3" />
-          <label for="tip--3">15%</label>
-          <input type="radio" name="tip" id="tip--4" />
-          <label for="tip--4">25%</label>
-          <input type="radio" name="tip" id="tip--5" />
-          <label for="tip--5">50%</label>
-          <input type="radio" name="tip" id="tip--6" />
-          <label for="tip--6">Custom</label>
+          <input type="radio" name="tip" id="tip--1" value="5" />
+          <label for="tip--1" class="tip-label">5%</label>
+          <input type="radio" name="tip" id="tip--2" value="10" />
+          <label for="tip--2" class="tip-label">10%</label>
+          <input type="radio" name="tip" id="tip--3" value="15" />
+          <label for="tip--3" class="tip-label">15%</label>
+          <input type="radio" name="tip" id="tip--4" value="25" />
+          <label for="tip--4" class="tip-label">25%</label>
+          <input type="radio" name="tip" id="tip--5" value="50" />
+          <label for="tip--5" class="tip-label">50%</label>
+          <input type="radio" name="tip" id="tip--6" value="" />
+          <label for="tip--6" class="tip-label">Custom</label>
         </div>
         <div class="form-group">
           <label for="people">Number of People</label>
-          <input type="number" name="people" id="people" />
+          <input type="text" name="people" id="people" />
         </div>
       </form>
       <div class="results">
