@@ -4,7 +4,11 @@ export const TipCalculatorStore = class extends EventTarget {
     this.localStorageKey = localStorageKey;
     this._readStorage();
     // Getters
-    this.get = () => ({ ...this.state, total: this._calculateTotal() });
+    this.get = () => ({
+      ...this.state,
+      total: this._calculateTotal(),
+      amount: this._calculateAmount(),
+    });
   }
   _readStorage() {
     this.state = JSON.parse(
@@ -18,12 +22,19 @@ export const TipCalculatorStore = class extends EventTarget {
     );
     this.dispatchEvent(new CustomEvent("save"));
   }
-  _calculateTotal() {
-    const { bill, tip, custom } = this.state;
+  _calculateAmount() {
+    const { bill, tip, custom, people } = this.state;
     if (tip === "custom") {
-      return Number(bill) * (Number(custom) / 100);
+      return (Number(bill) * (Number(custom) / 100)) / people;
     }
-    return Number(bill) * (Number(tip) / 100);
+    return (Number(bill) * (Number(tip) / 100)) / people;
+  }
+  _calculateTotal() {
+    const { bill, tip, custom, people } = this.state;
+    if (tip === "custom") {
+      return (Number(bill) * (Number(custom) / 100 + 1)) / people;
+    }
+    return (Number(bill) * (Number(tip) / 100 + 1)) / people;
   }
   // MUTATE methods
   update(newState) {

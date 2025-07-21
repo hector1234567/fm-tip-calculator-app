@@ -27,17 +27,19 @@ const App = {
     setCustomValue(value) {
       App.$.custom.value = value ? value : "";
     },
-    setTotal(total) {
-      App.$.total.innerText = total
-        ? "$" + parseFloat(total).toFixed(2)
-        : "$0.00";
+    setTotal(total, people) {
+      if (total && people > 0) {
+        App.$.total.innerText = "$" + parseFloat(total).toFixed(2);
+      } else {
+        App.$.total.innerText = "$0.00";
+      }
     },
-    setAmount(total, people) {
-      if (!people || !total) return (App.$.amount.innerText = "$0.00");
-      const totalFloat = parseFloat(total);
-      const peopleInt = parseInt(people);
-      if (peopleInt === 0) return (App.$.amount.innerText = "");
-      App.$.amount.innerText = "$" + (totalFloat / peopleInt).toFixed(2);
+    setAmount(amount, people) {
+      if (amount && people > 0) {
+        App.$.amount.innerText = "$" + parseFloat(amount).toFixed(2);
+      } else {
+        App.$.amount.innerText = "$0.00";
+      }
     },
     focusCustom() {
       setTimeout(() => {
@@ -78,13 +80,14 @@ const App = {
     return true;
   },
   render() {
-    const { bill, tip, custom, people, total } = tipCalculatorStore.get();
+    const { bill, tip, custom, people, total, amount } =
+      tipCalculatorStore.get();
     App.$.setBillValue(bill);
     App.$.setPeopleValue(people);
     App.$.setTipValue(tip);
     App.$.setCustomValue(custom);
-    App.$.setTotal(total);
-    App.$.setAmount(total, people);
+    App.$.setTotal(total, people);
+    App.$.setAmount(amount, people);
     App.$.showCantBeZero(Number(people) === 0);
   },
 };
