@@ -57,7 +57,7 @@ const App = {
     App.$.form.addEventListener("input", () => {
       const formData = new FormData(App.$.form);
       const data = {};
-      for (let [key, value] of formData.entries()) {
+      for (const [key, value] of formData.entries()) {
         data[key] = value;
       }
       if (this.validateForm(data)) tipCalculatorStore.update({ ...data });

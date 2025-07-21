@@ -71,6 +71,7 @@ form {
   flex-basis: 50%;
   display: grid;
   gap: 4rem;
+  padding: 1rem;
 }
 
 form input[type="text"]::selection {
@@ -292,6 +293,10 @@ input[type="radio"]:checked + label {
     flex-direction: column;
     max-width: 60.8rem;
     padding: 4.8rem 8rem;
+  }
+
+  form {
+    padding: 0;
   }
 
   .result .value {
