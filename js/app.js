@@ -45,6 +45,13 @@ const App = {
         App.$.custom.select();
       }, 100);
     },
+    showCantBeZero(show) {
+      if (show) {
+        App.$.people.classList.add("error");
+      } else {
+        App.$.people.classList.remove("error");
+      }
+    },
   },
   init() {
     App.$.form.addEventListener("input", () => {
@@ -67,6 +74,7 @@ const App = {
     if (bill.length && !isDecimalNumber(bill)) return false;
     if (people.length && !isIntegerNumber(people)) return false;
     if (custom.length && !isDecimalNumber(custom)) return false;
+    if (custom.length && Number(custom) > 100) return false;
     return true;
   },
   render() {
@@ -77,6 +85,7 @@ const App = {
     App.$.setCustomValue(custom);
     App.$.setTotal(total);
     App.$.setAmount(total, people);
+    App.$.showCantBeZero(Number(people) === 0);
   },
 };
 App.init();

@@ -5,6 +5,8 @@
   --Green-400: hsl(172, 67%, 45%);
   --Green-200: hsl(173, 61%, 77%);
 
+  --Orange-400: hsl(13, 70%, 60%);
+
   /* Neutral */
   --Green-900: hsl(183, 100%, 15%);
   --Grey-550: hsl(180, 18%, 40%);
@@ -71,9 +73,17 @@ form {
   gap: 4rem;
 }
 
+form input[type="text"]::selection {
+  background-color: var(--Green-200);
+}
+
+form input[type="text"]:focus-visible {
+  outline: 0.2rem solid var(--Green-400);
+}
+
 .form-group {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: auto auto;
   gap: 0.8rem;
   position: relative;
 }
@@ -82,7 +92,6 @@ label {
   font-size: 1.6rem;
   line-height: 2.4rem;
   color: var(--Grey-500);
-  grid-column: 1/-1;
 }
 
 .form-group input {
@@ -95,6 +104,23 @@ label {
   text-align: end;
   padding: 0.8rem 1.6rem;
   border-radius: 0.5rem;
+  grid-column: 1/-1;
+}
+
+.error-message {
+  color: var(--Orange-400);
+  justify-self: flex-end;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  display: none;
+}
+
+.form-group:has(.error) .error-message {
+  display: block;
+}
+
+.form-group input.error {
+  outline: 0.2rem solid var(--Orange-400);
 }
 
 .form-group label::before {
@@ -123,6 +149,10 @@ label {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.6rem;
+}
+
+.radio-group__label {
+  grid-column: 1/-1;
 }
 
 input[type="radio"] {
@@ -239,6 +269,14 @@ input[type="radio"]:checked + label {
   border: none;
   margin-top: auto;
   cursor: pointer;
+}
+
+.results button:hover {
+  background-color: var(--Green-200);
+}
+
+.results button:active {
+  background-color: var(--Green-400);
 }
 
 @media (max-width: 890px) {

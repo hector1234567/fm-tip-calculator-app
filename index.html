@@ -33,7 +33,7 @@
           <input type="text" name="bill" id="bill" autocomplete="off" />
         </div>
         <div class="radio-group">
-          <label>Select Tip %</label>
+          <label class="radio-group__label">Select Tip %</label>
           <input type="radio" name="tip" id="tip--5" value="5" />
           <label for="tip--5" class="tip-label">5%</label>
           <input type="radio" name="tip" id="tip--10" value="10" />
@@ -50,6 +50,7 @@
         </div>
         <div class="form-group">
           <label for="people">Number of People</label>
+          <p class="error-message">Can't be zero</p>
           <input type="text" name="people" id="people" autocomplete="off" />
         </div>
       </form>
