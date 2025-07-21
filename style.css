@@ -149,7 +149,7 @@ input[type="radio"] {
   color: var(--Green-900);
 }
 
-#tip--6 + label {
+#tip--custom + label {
   background-color: var(--Grey-50);
   color: var(--Grey-550);
 }
@@ -178,11 +178,11 @@ input[type="radio"]:checked + label {
   color: var(--Grey-550);
 } */
 
-.radio-group:has(#tip--6:checked) #custom {
+.radio-group:has(#tip--custom:checked) #custom {
   display: block;
 }
 
-#tip--6:checked + label {
+#tip--custom:checked + label {
   display: none;
 }
 
